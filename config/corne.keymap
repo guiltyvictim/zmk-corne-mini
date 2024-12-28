@@ -12,6 +12,11 @@
 
 //testing mouse movement and scroll binds...
 
+&mmv {
+    trigger-period-ms = <10>;
+    delay-ms = <0>;
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -105,7 +110,7 @@
 &none  &kp B               &kp L           &kp D           &kp W             &kp Z                         &kp SINGLE_QUOTE             &kp F              &kp O              &kp U            &kp J                &none
 &none  &hm LEFT_CONTROL N  &hm LEFT_ALT R  &hm LEFT_GUI T  &hm LEFT_SHIFT S  &hm LS(LA(LC(LEFT_GUI))) G    &hm RS(RA(RC(RIGHT_GUI))) Y  &hm RIGHT_SHIFT H  &hm RIGHT_GUI A    &hm RIGHT_ALT E  &hm RIGHT_CONTROL I  &none
 &none  &kp Q               &kp X           &lt 7 M         &lt 6 C           &hm LS(LA(LEFT_CONTROL)) V    &hm RS(RA(RIGHT_CONTROL)) K  &kp P              &kp COMMA          &kp DOT          &mt SEMI SLASH       &none
-                                           &lt 6 TAB       &lt 2 ENTER       &lt 3 ESCAPE                  &lt 5 BACKSPACE              &lt 4 SPACE        &Repeat_Layer 7 0
+                                           &lt 6 TAB       &lt 2 ENTER       &lt 3 ESCAPE                  &lt 7 BACKSPACE              &lt 4 SPACE        &Repeat_Layer 5 0
             >;
         };
 
@@ -185,5 +190,12 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        System_Layer {
+            if-layers = <3 7>;
+            then-layer = <5>;
+        };
+    };
 };
