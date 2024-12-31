@@ -199,5 +199,5 @@ parse_config:
     TILDE2: '~'
   zmk_combos: {}
   zmk_preamble: '#define KEYMAP_DRAWER'
-  zmk_additional_includes: ["zmk-helpers/include"]
+  zmk_additional_includes: ["zmk-helpers"]
 
