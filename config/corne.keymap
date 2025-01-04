@@ -83,6 +83,15 @@
             tapping-term-ms = <160>;
             flavor = "tap-preferred";
         };
+
+        Delete: Delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DELETE";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
@@ -98,11 +107,6 @@
             bindings = <&kp ENTER>;
             key-positions = <33 32>;
             layers = <1 0>;
-        };
-
-        System {
-            bindings = <&lt 5 DEL>;
-            key-positions = <38 39>;
         };
     };
 
