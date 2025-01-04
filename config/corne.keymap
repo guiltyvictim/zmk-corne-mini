@@ -73,6 +73,15 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        Repeat_Layer: Repeat_Layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "REPEAT_LAYER";
+            bindings = <&lt>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+        };
     };
 
     combos {
@@ -80,7 +89,14 @@
 
         Tab {
             bindings = <&kp TAB>;
-            key-positions = <37 40>;
+            key-positions = <26 27>;
+            layers = <0 1>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <33 32>;
+            layers = <1 0>;
         };
     };
 
@@ -110,8 +126,8 @@
             bindings = <
 &none  &kp B               &kp L           &kp D           &kp W             &kp Z                         &kp SINGLE_QUOTE             &kp F              &kp O            &kp U            &kp J                &none
 &none  &hm LEFT_CONTROL N  &hm LEFT_ALT R  &hm LEFT_GUI T  &hm LEFT_SHIFT S  &hm LS(LA(LC(LEFT_GUI))) G    &hm RS(RA(RC(RIGHT_GUI))) Y  &hm RIGHT_SHIFT H  &hm RIGHT_GUI A  &hm RIGHT_ALT E  &hm RIGHT_CONTROL I  &none
-&none  &kp Q               &hm TAB X       &lt 7 M         &lt 6 C           &hm LS(LA(LEFT_CONTROL)) V    &hm RS(RA(RIGHT_CONTROL)) K  &kp P              &hm SEMI COMMA   &hm COLON DOT    &Repeat_Tap SLASH 0  &none
-                                           &lt 6 TAB       &lt 2 ESCAPE      &lt 3 BACKSPACE               &lt 5 ENTER                  &lt 4 SPACE        &lt 7 DELETE
+&none  &kp Q               &kp X           &lt 7 M         &lt 6 C           &hm LS(LA(LEFT_CONTROL)) V    &hm RS(RA(RIGHT_CONTROL)) K  &kp P              &hm SEMI COMMA   &hm COLON DOT    &Repeat_Tap SLASH 0  &none
+                                           &lt 6 TAB       &lt 2 ESCAPE      &lt 3 BACKSPACE               &Repeat_Layer 5 0            &lt 4 SPACE        &lt 7 DELETE
             >;
         };
 
