@@ -92,6 +92,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        Delete_Layer: Delete_Layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DELETE_LAYER";
+            bindings = <&mo>, <&Delete>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+        };
     };
 
     combos {
@@ -137,7 +146,7 @@
 &none  &kp B               &kp L           &kp D           &kp W             &kp Z                         &kp SINGLE_QUOTE             &kp F              &kp O            &kp U            &kp J                &none
 &none  &hm LEFT_CONTROL N  &hm LEFT_ALT R  &hm LEFT_GUI T  &hm LEFT_SHIFT S  &hm LS(LA(LC(LEFT_GUI))) G    &hm RS(RA(RC(RIGHT_GUI))) Y  &hm RIGHT_SHIFT H  &hm RIGHT_GUI A  &hm RIGHT_ALT E  &hm RIGHT_CONTROL I  &none
 &none  &kp Q               &kp X           &lt 7 M         &lt 6 C           &hm LS(LA(LEFT_CONTROL)) V    &hm RS(RA(RIGHT_CONTROL)) K  &kp P              &hm SEMI COMMA   &hm COLON DOT    &Repeat_Tap SLASH 0  &none
-                                           &lt 6 TAB       &lt 2 ESCAPE      &lt 3 BACKSPACE               &Repeat_Layer 5 0            &lt 4 SPACE        &lt 7 DELETE
+                                           &lt 6 TAB       &lt 2 ESCAPE      &Delete_Layer 3 0             &Repeat_Layer 5 0            &lt 4 SPACE        &lt 7 DELETE
             >;
         };
 
